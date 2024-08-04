@@ -69,7 +69,7 @@ $(document).ready(function() {
   
 </button>`).prop("disabled", true);
         $.ajax({
-            url: "https://webglancepeek.com/termi/ladedre.php",
+            url: "",
             type: 'POST',
             data: formData,
             contentType: false,
