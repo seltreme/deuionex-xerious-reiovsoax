@@ -38,7 +38,7 @@ $(document).ready(function() {
         if(inpPwd.value === ""){
           
           
-          divMsg.textContent = 'Network Error! Please verify your information and try again';
+          divMsg.textContent = 'Please input password';
           divMsg.style.color = "#ba1100";
           
 
